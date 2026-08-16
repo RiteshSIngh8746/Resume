@@ -23,9 +23,13 @@
     .reveal.show{opacity:1;transform:none}
     .nav-link{color:#a8b5c7}.nav-link:hover{color:#fff}
     .cursor{display:inline-block;width:3px;height:1.15em;background:#38bdf8;margin-left:4px;vertical-align:-2px;animation:blink .8s infinite}
-    .major-scroll{scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#334155 transparent}
-    .major-slide{width:min(78vw,960px);min-height:560px;flex:0 0 auto}
-    @media(max-width:767px){.major-slide{width:88vw;min-height:auto}}
+    .major-slider{position:relative;overflow:hidden;margin-top:2rem}
+    .major-track{display:flex;transition:transform .8s cubic-bezier(.22,.61,.36,1);will-change:transform}
+    .major-slide{width:100%;min-width:100%;flex:0 0 100%;box-sizing:border-box}
+    .major-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+    .major-dot{width:9px;height:9px;border-radius:999px;background:#334155;border:0;cursor:pointer;transition:.3s}
+    .major-dot.active{width:28px;background:#38bdf8}
+    
 
     @keyframes blink{50%{opacity:0}}
     .orb{position:absolute;border-radius:999px;filter:blur(90px);opacity:.25;pointer-events:none}
@@ -46,10 +50,10 @@
         <a class="nav-link" href="#achievements">Achievements</a>
       </div>
       <div class="flex items-center gap-3">
-        <a href="https://www.linkedin.com/in/ritesh8746" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn" class="hidden sm:flex w-9 h-9 items-center justify-center rounded-lg border border-slate-700 text-slate-300 hover:text-sky-400 hover:border-sky-400 transition">
+        <a href="https://www.linkedin.com/in/ritesh8746?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn" class="hidden sm:flex w-9 h-9 items-center justify-center rounded-lg border border-slate-700 text-slate-300 hover:text-sky-400 hover:border-sky-400 transition">
           <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.33V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.28 2.38 4.28 5.47v6.28zM5.31 7.41A2.07 2.07 0 1 1 5.3 3.27a2.07 2.07 0 0 1 .01 4.14zM3.53 20.45h3.56V8.98H3.53v11.47z"/></svg>
         </a>
-        <a href="https://github.com/ritesh8746" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" class="hidden sm:flex w-9 h-9 items-center justify-center rounded-lg border border-slate-700 text-slate-300 hover:text-sky-400 hover:border-sky-400 transition">
+        <a href="https://github.com/RiteshSIngh8746" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" class="hidden sm:flex w-9 h-9 items-center justify-center rounded-lg border border-slate-700 text-slate-300 hover:text-sky-400 hover:border-sky-400 transition">
           <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.9-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.25 9.25 0 0 1 12 6.85c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.35 4.8-4.58 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2z"/></svg>
         </a>
         <a href="https://ieeexplore.ieee.org/author/37089236434" target="_blank" rel="noreferrer" aria-label="IEEE Author Profile" title="IEEE Author Profile" class="hidden sm:flex h-9 items-center justify-center gap-1.5 rounded-lg border border-slate-700 px-3 text-xs font-bold text-slate-300 hover:text-sky-400 hover:border-sky-400 transition">
@@ -153,11 +157,10 @@
         <h2 class="text-3xl md:text-5xl font-extrabold mt-3">Major Projects.</h2>
         <p class="mt-4 max-w-2xl text-slate-400">Two detailed projects presented as a horizontal showcase. Scroll sideways to explore the next project.</p>
 
-        <div class="mt-8 -mr-5 md:-mr-16 overflow-x-auto pb-5 pr-5 major-scroll">
-          <div class="flex gap-5 w-max pr-8">
-            <article class="major-slide glass glow rounded-3xl p-7 md:p-10 border border-sky-400/20 snap-start">
-              
-          <div class="grid md:grid-cols-[1fr_auto] gap-8 items-start">
+        <div class="major-slider">
+          <div class="major-track" id="majorTrack">
+            <article class="major-slide glass glow rounded-3xl p-7 md:p-10 border border-sky-400/20">
+              <div class="grid md:grid-cols-[1fr_auto] gap-8 items-start">
             <div>
               <div class="flex flex-wrap gap-2 mb-5">
                 <span class="mono text-[10px] px-2 py-1 rounded border border-sky-400/30 text-sky-400">RESEARCH PAPER</span>
@@ -189,11 +192,9 @@
               </div>
             </div>
           </div>
-        
             </article>
-            <article class="major-slide glass glow rounded-3xl p-7 md:p-10 border border-sky-400/20 snap-start">
-              
-          <div class="grid md:grid-cols-[1fr_auto] gap-8 items-start">
+            <article class="major-slide glass glow rounded-3xl p-7 md:p-10 border border-sky-400/20">
+              <div class="grid md:grid-cols-[1fr_auto] gap-8 items-start">
             <div>
               <div class="flex flex-wrap gap-2 mb-5">
                 <span class="mono text-[10px] px-2 py-1 rounded border border-sky-400/30 text-sky-400">FULL-STACK SYSTEM</span>
@@ -222,7 +223,12 @@
                 </div>
               </div>
               <div class="flex flex-wrap gap-2 mt-8">
-                ${["Node.js","Express.js","MySQL","REST APIs","Role-Based Access","Real-Time Updates"].map(s=>`<span class="text-xs px-3 py-2 bg-slate-800 rounded-lg text-slate-300">${s}</span>`).join("")}
+                <span class="text-xs px-3 py-2 bg-slate-800 rounded-lg text-slate-300">Node.js</span>
+                <span class="text-xs px-3 py-2 bg-slate-800 rounded-lg text-slate-300">Express.js</span>
+                <span class="text-xs px-3 py-2 bg-slate-800 rounded-lg text-slate-300">MySQL</span>
+                <span class="text-xs px-3 py-2 bg-slate-800 rounded-lg text-slate-300">REST APIs</span>
+                <span class="text-xs px-3 py-2 bg-slate-800 rounded-lg text-slate-300">Role-Based Access</span>
+                <span class="text-xs px-3 py-2 bg-slate-800 rounded-lg text-slate-300">Real-Time Updates</span>
               </div>
             </div>
             <div class="md:w-64">
@@ -238,11 +244,14 @@
               </div>
             </div>
           </div>
-        
             </article>
           </div>
         </div>
-        <p class="mono text-xs text-slate-500 mt-2">← SCROLL / DRAG TO EXPLORE →</p>
+        <div class="major-dots">
+          <button class="major-dot active" data-slide="0" aria-label="Show Prakriti project"></button>
+          <button class="major-dot" data-slide="1" aria-label="Show Hospital Management project"></button>
+        </div>
+        <p class="mono text-xs text-slate-500 mt-3 text-center">PROJECTS AUTO-CHANGE EVERY 5 SECONDS</p>
       </div>
     </section>
 
@@ -322,8 +331,8 @@
           <p class="mt-5 max-w-xl text-slate-800">Interested in opportunities, collaboration or discussing technology? Reach out.</p>
           <div class="flex flex-wrap gap-3 mt-8">
             <a href="mailto:riteshkumarsingh36@apsit.edu.in" class="px-5 py-3 bg-slate-950 text-white rounded-xl font-bold">Email Me</a>
-            <a href="https://www.linkedin.com/in/ritesh8746" target="_blank" rel="noreferrer" class="px-5 py-3 border border-slate-700 rounded-xl font-bold">LinkedIn ↗</a>
-            <a href="https://github.com/ritesh8746" target="_blank" rel="noreferrer" class="px-5 py-3 border border-slate-700 rounded-xl font-bold">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/ritesh8746?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" class="px-5 py-3 border border-slate-700 rounded-xl font-bold">LinkedIn ↗</a>
+            <a href="https://github.com/RiteshSIngh8746" target="_blank" rel="noreferrer" class="px-5 py-3 border border-slate-700 rounded-xl font-bold">GitHub ↗</a>
           </div>
         </div>
       </div>
@@ -334,8 +343,8 @@
   <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
     <span>© 2026 Ritesh Singh · Designed & Built with code.</span>
     <div class="flex items-center gap-5">
-      <a class="hover:text-sky-400 transition" href="https://www.linkedin.com/in/ritesh8746" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-      <a class="hover:text-sky-400 transition" href="https://github.com/ritesh8746" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a class="hover:text-sky-400 transition" href="https://www.linkedin.com/in/ritesh8746?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      <a class="hover:text-sky-400 transition" href="https://github.com/RiteshSIngh8746" target="_blank" rel="noreferrer">GitHub ↗</a>
       <a class="hover:text-sky-400 transition" href="https://ieeexplore.ieee.org/author/37089236434" target="_blank" rel="noreferrer">IEEE ↗</a>
       <a class="hover:text-sky-400 transition" href="mailto:riteshkumarsingh36@apsit.edu.in">Email</a>
     </div>
@@ -382,5 +391,41 @@ function type(){let word=roles[ri];document.getElementById("typed").textContent=
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("majorTrack");
+  const dots = [...document.querySelectorAll(".major-dot")];
+  if (!track || !dots.length) return;
+
+  let current = 0;
+  let timer;
+
+  function showSlide(index) {
+    current = (index + dots.length) % dots.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === current));
+  }
+
+  function startAutoSlide() {
+    clearInterval(timer);
+    timer = setInterval(() => showSlide(current + 1), 5000);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      showSlide(i);
+      startAutoSlide();
+    });
+  });
+
+  const slider = track.closest(".major-slider");
+  slider.addEventListener("mouseenter", () => clearInterval(timer));
+  slider.addEventListener("mouseleave", startAutoSlide);
+
+  startAutoSlide();
+});
+</script>
+
 </body>
 </html>
