@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ritesh Singh - CSE AIML Engineer | Cybersecurity | DevOps | Machine Learning" />
+  <title>Ritesh Singh | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#08111f; --card:#0d1a2d; --text:#e8eef8; --muted:#92a1b5; --accent:#38bdf8; }
+    *{scroll-behavior:smooth}
+    body{font-family:Manrope,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+    .mono{font-family:'DM Mono',monospace}
+    .grid-bg{background-image:linear-gradient(rgba(56,189,248,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.06) 1px,transparent 1px);background-size:55px 55px}
+    .glass{background:rgba(13,26,45,.72);backdrop-filter:blur(18px);border:1px solid rgba(148,163,184,.14)}
+    .glow{box-shadow:0 0 80px rgba(56,189,248,.12)}
+    .skill:hover,.project:hover{transform:translateY(-6px);border-color:rgba(56,189,248,.55)}
+    .skill,.project{transition:.25s ease}
+    .reveal{opacity:0;transform:translateY(24px);transition:.7s ease}
+    .reveal.show{opacity:1;transform:none}
+    .nav-link{color:#a8b5c7}.nav-link:hover{color:#fff}
+    .cursor{display:inline-block;width:3px;height:1.15em;background:#38bdf8;margin-left:4px;vertical-align:-2px;animation:blink .8s infinite}
+    .major-scroll{scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#334155 transparent}
+    .major-slide{width:min(78vw,960px);min-height:560px;flex:0 0 auto}
+    @media(max-width:767px){.major-slide{width:88vw;min-height:auto}}
+
+    @keyframes blink{50%{opacity:0}}
+    .orb{position:absolute;border-radius:999px;filter:blur(90px);opacity:.25;pointer-events:none}
+    ::selection{background:#0ea5e9;color:#fff}
+  </style>
+</head>
+<body>
+  <div class="fixed inset-0 grid-bg -z-20"></div>
+  <div class="orb w-72 h-72 bg-sky-500 top-20 -left-32 -z-10"></div>
+  <div class="orb w-96 h-96 bg-indigo-500 top-[40%] -right-48 -z-10"></div>
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#08111f]/80 backdrop-blur-xl border-b border-slate-800/70">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#home" class="font-extrabold tracking-tight text-lg">RS<span class="text-sky-400">.</span></a>
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a class="nav-link" href="#about">About</a><a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a><a class="nav-link" href="#major-projects">Research</a><a class="nav-link" href="#skills">Skills</a><a class="nav-link" href="#certifications">Certificates</a>
+        <a class="nav-link" href="#achievements">Achievements</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://www.linkedin.com/in/ritesh8746" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn" class="hidden sm:flex w-9 h-9 items-center justify-center rounded-lg border border-slate-700 text-slate-300 hover:text-sky-400 hover:border-sky-400 transition">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.33V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.28 2.38 4.28 5.47v6.28zM5.31 7.41A2.07 2.07 0 1 1 5.3 3.27a2.07 2.07 0 0 1 .01 4.14zM3.53 20.45h3.56V8.98H3.53v11.47z"/></svg>
+        </a>
+        <a href="https://github.com/ritesh8746" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" class="hidden sm:flex w-9 h-9 items-center justify-center rounded-lg border border-slate-700 text-slate-300 hover:text-sky-400 hover:border-sky-400 transition">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.9-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.25 9.25 0 0 1 12 6.85c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.35 4.8-4.58 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2z"/></svg>
+        </a>
+        <a href="https://ieeexplore.ieee.org/author/37089236434" target="_blank" rel="noreferrer" aria-label="IEEE Author Profile" title="IEEE Author Profile" class="hidden sm:flex h-9 items-center justify-center gap-1.5 rounded-lg border border-slate-700 px-3 text-xs font-bold text-slate-300 hover:text-sky-400 hover:border-sky-400 transition">
+          <span class="mono text-[11px]">IEEE</span>
+          <span class="text-sky-400">↗</span>
+        </a>
+        <a href="#contact" class="px-4 py-2 rounded-lg bg-sky-400 text-slate-950 text-sm font-bold hover:bg-sky-300">Let's Talk</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="min-h-screen flex items-center pt-16">
+      <div class="max-w-6xl mx-auto px-5 w-full">
+        <div class="max-w-4xl">
+          <p class="mono text-sky-400 text-sm mb-5">// HELLO, I'M</p>
+          <h1 class="text-5xl md:text-7xl font-extrabold leading-[.98] tracking-tight">Ritesh<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-200">Singh.</span></h1>
+          <div class="mt-7 text-xl md:text-3xl font-semibold text-slate-300 min-h-10">
+            <span id="typed"></span><span class="cursor"></span>
+          </div>
+          <p class="mt-6 max-w-2xl text-slate-400 leading-7">CSE–AIML engineer building across <b class="text-slate-200">Cybersecurity, DevOps, Cloud, IoT and Machine Learning</b>. I enjoy turning real-world problems into practical, scalable systems.</p>
+          <div class="flex flex-wrap gap-3 mt-9">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-sky-400 text-slate-950 font-bold hover:bg-sky-300">View My Work ↓</a>
+            <a href="#contact" class="px-6 py-3 rounded-xl border border-slate-600 font-semibold hover:border-sky-400">Contact Me</a>
+          </div>
+          <div class="flex gap-8 mt-14 text-sm">
+            <div><p class="text-2xl font-extrabold text-sky-400">4+</p><p class="text-slate-500">Major Projects</p></div>
+            <div><p class="text-2xl font-extrabold text-sky-400">2</p><p class="text-slate-500">Internships</p></div>
+            <div><p class="text-2xl font-extrabold text-sky-400">1×</p><p class="text-slate-500">Hackathon Winner</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-24">
+      <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-[.9fr_1.1fr] gap-12 items-center reveal">
+        <div class="glass glow rounded-3xl p-8">
+          <p class="mono text-sky-400 text-sm">PROFILE.JSON</p>
+          <pre class="mt-5 text-sm md:text-base leading-8 text-slate-300 whitespace-pre-wrap">{
+  "degree": "B.E. CSE–AIML",
+  "cgpa": "7.5",
+  "focus": [
+    "Cybersecurity",
+    "DevOps & Cloud",
+    "Machine Learning"
+  ],
+  "status": "Open to opportunities"
+}</pre>
+        </div>
+        <div>
+          <p class="mono text-sky-400 text-sm mb-3">// ABOUT ME</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Engineering across multiple domains.</h2>
+          <p class="mt-6 text-slate-400 leading-8">I am a Computer Science & Engineering student specializing in Artificial Intelligence and Machine Learning. My work spans enterprise security, CI/CD automation, machine learning, computer vision and full-stack development.</p>
+          <p class="mt-4 text-slate-400 leading-8">I combine hands-on project experience with hackathon leadership and practical internship exposure to build solutions that are useful beyond the classroom.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="py-24">
+      <div class="max-w-6xl mx-auto px-5 reveal">
+        <p class="mono text-sky-400 text-sm">// EXPERIENCE</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold mt-3">Where I've built and learned.</h2>
+        <div class="mt-12 border-l border-slate-700 ml-3 space-y-10">
+          <article class="relative pl-8">
+            <span class="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-sky-400"></span>
+            <div class="glass rounded-2xl p-6">
+              <div class="flex flex-col md:flex-row md:justify-between gap-2"><div><h3 class="text-xl font-bold">Cybersecurity Intern</h3><p class="text-sky-400">RockLadder</p></div><span class="mono text-xs text-slate-500">APR 2026 — PRESENT</span></div>
+              <ul class="mt-5 grid md:grid-cols-2 gap-3 text-sm text-slate-400"><li>→ Worked with ZIA, ZPA and ZDX enterprise security solutions</li><li>→ Applied Zero Trust principles using Zscaler platforms</li><li>→ Monitored endpoint security with SentinelOne EDR</li><li>→ Analyzed network traffic, user behavior and performance anomalies</li></ul>
+            </div>
+          </article>
+          <article class="relative pl-8">
+            <span class="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-cyan-200"></span>
+            <div class="glass rounded-2xl p-6">
+              <div class="flex flex-col md:flex-row md:justify-between gap-2"><div><h3 class="text-xl font-bold">DevOps & Cloud Intern</h3><p class="text-sky-400">Larsen & Toubro (L&T)</p></div><span class="mono text-xs text-slate-500">SEP 2025 — FEB 2026</span></div>
+              <ul class="mt-5 grid md:grid-cols-2 gap-3 text-sm text-slate-400"><li>→ Configured Jenkins CI/CD pipelines on cloud infrastructure</li><li>→ Automated build and deployment workflows</li><li>→ Reduced manual effort through automation</li><li>→ Applied Git and DevOps best practices</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-24">
+      <div class="max-w-6xl mx-auto px-5 reveal">
+        <p class="mono text-sky-400 text-sm">// SELECTED PROJECTS</p>
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mt-3"><h2 class="text-3xl md:text-5xl font-extrabold">Things I've built.</h2><div id="filters" class="flex flex-wrap gap-2"></div></div>
+        <div id="projectGrid" class="grid md:grid-cols-2 gap-5 mt-10"></div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-24">
+      <div class="max-w-6xl mx-auto px-5 reveal">
+        <p class="mono text-sky-400 text-sm">// TECH STACK</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold mt-3">Skills & tools.</h2>
+        <div id="skillGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10"></div>
+      </div>
+    </section>
+
+    <section id="major-projects" class="py-24 overflow-hidden">
+      <div class="max-w-6xl mx-auto px-5 reveal">
+        <p class="mono text-sky-400 text-sm">// FEATURED WORK</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold mt-3">Major Projects.</h2>
+        <p class="mt-4 max-w-2xl text-slate-400">Two detailed projects presented as a horizontal showcase. Scroll sideways to explore the next project.</p>
+
+        <div class="mt-8 -mr-5 md:-mr-16 overflow-x-auto pb-5 pr-5 major-scroll">
+          <div class="flex gap-5 w-max pr-8">
+            <article class="major-slide glass glow rounded-3xl p-7 md:p-10 border border-sky-400/20 snap-start">
+              
+          <div class="grid md:grid-cols-[1fr_auto] gap-8 items-start">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="mono text-[10px] px-2 py-1 rounded border border-sky-400/30 text-sky-400">RESEARCH PAPER</span>
+                <span class="mono text-[10px] px-2 py-1 rounded border border-amber-300/30 text-amber-300">MAJOR PROJECT</span>
+              </div>
+              <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Prakriti: Human Body-Type Identification to Recommend Lifestyle using IoT and ML</h2>
+              <p class="mt-5 text-slate-400 leading-8">Co-authored research work combining Ayurvedic Prakriti identification with IoT-based physiological monitoring and Machine Learning. The proposed architecture uses ECG, pulse, temperature and SpO2 sensing, edge processing with ESP32/Arduino, cloud integration and ML models for Dosha classification and early health-risk analysis.</p>
+              <div class="grid sm:grid-cols-3 gap-4 mt-7">
+                <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><p class="text-2xl font-extrabold text-sky-400">2,004</p><p class="text-xs text-slate-500 mt-1">Training records</p></div>
+                <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><p class="text-2xl font-extrabold text-sky-400">0.92</p><p class="text-xs text-slate-500 mt-1">Best Dosha accuracy</p></div>
+                <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><p class="text-2xl font-extrabold text-sky-400">&lt; 2s</p><p class="text-xs text-slate-500 mt-1">Mean transmission delay</p></div>
+              </div>
+              <div class="flex flex-wrap gap-3 mt-8">
+                <a href="https://ieeexplore.ieee.org/author/37089236434" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-sky-400 text-slate-950 font-bold hover:bg-sky-300">View IEEE Author Profile ↗</a>
+                <a href="#projects" class="px-5 py-3 rounded-xl border border-slate-600 font-semibold hover:border-sky-400">View Major Project ↑</a>
+              </div>
+            </div>
+            <div class="md:w-64">
+              <div class="rounded-2xl border border-slate-700 bg-slate-900/70 p-6">
+                <p class="mono text-xs text-sky-400">RESEARCH AREAS</p>
+                <div class="mt-5 space-y-3 text-sm text-slate-300">
+                  <p>01. IoT Healthcare</p>
+                  <p>02. Machine Learning</p>
+                  <p>03. Ensemble Learning</p>
+                  <p>04. Preventive Healthcare</p>
+                  <p>05. Personalized Wellness</p>
+                  <p>06. Ayurvedic Informatics</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+            </article>
+            <article class="major-slide glass glow rounded-3xl p-7 md:p-10 border border-sky-400/20 snap-start">
+              
+          <div class="grid md:grid-cols-[1fr_auto] gap-8 items-start">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="mono text-[10px] px-2 py-1 rounded border border-sky-400/30 text-sky-400">FULL-STACK SYSTEM</span>
+                <span class="mono text-[10px] px-2 py-1 rounded border border-amber-300/30 text-amber-300">MAJOR PROJECT</span>
+              </div>
+              <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Hospital Management System</h2>
+              <p class="mt-5 text-slate-400 leading-8">A full-stack healthcare platform designed to digitize both clinical and administrative workflows. The system brings core hospital operations into one centralized environment, enabling structured patient record management and role-based access across multiple functional modules.</p>
+              <div class="mt-5 flex items-center gap-3 rounded-xl border border-amber-300/25 bg-amber-300/5 px-4 py-3">
+                <span class="text-xl">🏆</span>
+                <p class="text-sm text-amber-100"><b>Hackathon Achievement:</b> Developed during a hackathon and secured a place in the <b>Top 3 teams</b>.</p>
+              </div>
+              <div class="grid sm:grid-cols-3 gap-4 mt-7">
+                <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><p class="text-2xl font-extrabold text-sky-400">6+</p><p class="text-xs text-slate-500 mt-1">Core healthcare modules</p></div>
+                <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><p class="text-2xl font-extrabold text-sky-400">RBAC</p><p class="text-xs text-slate-500 mt-1">Role-based access</p></div>
+                <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><p class="text-2xl font-extrabold text-sky-400">API</p><p class="text-xs text-slate-500 mt-1">REST-based integration</p></div>
+              </div>
+              <div class="mt-8">
+                <p class="mono text-xs text-sky-400 mb-4">SYSTEM MODULES</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><b class="text-sm">Patient Records</b><p class="text-xs text-slate-500 mt-1">Centralized record management</p></div>
+                  <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><b class="text-sm">OPD / IPD</b><p class="text-xs text-slate-500 mt-1">Clinical workflow support</p></div>
+                  <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><b class="text-sm">EMR</b><p class="text-xs text-slate-500 mt-1">Electronic medical records</p></div>
+                  <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><b class="text-sm">Laboratory</b><p class="text-xs text-slate-500 mt-1">Lab workflow integration</p></div>
+                  <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><b class="text-sm">Pharmacy</b><p class="text-xs text-slate-500 mt-1">Medicine-related operations</p></div>
+                  <div class="rounded-xl bg-slate-900/60 p-4 border border-slate-700/60"><b class="text-sm">Billing</b><p class="text-xs text-slate-500 mt-1">Administrative billing workflows</p></div>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-8">
+                ${["Node.js","Express.js","MySQL","REST APIs","Role-Based Access","Real-Time Updates"].map(s=>`<span class="text-xs px-3 py-2 bg-slate-800 rounded-lg text-slate-300">${s}</span>`).join("")}
+              </div>
+            </div>
+            <div class="md:w-64">
+              <div class="rounded-2xl border border-slate-700 bg-slate-900/70 p-6">
+                <p class="mono text-xs text-sky-400">PROJECT ARCHITECTURE</p>
+                <div class="mt-5 space-y-4 text-sm text-slate-300">
+                  <p><span class="text-sky-400">01.</span> Full-Stack Application</p>
+                  <p><span class="text-sky-400">02.</span> REST API Layer</p>
+                  <p><span class="text-sky-400">03.</span> Role-Based Access</p>
+                  <p><span class="text-sky-400">04.</span> MySQL Data Layer</p>
+                  <p><span class="text-sky-400">05.</span> Real-Time Updates</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+            </article>
+          </div>
+        </div>
+        <p class="mono text-xs text-slate-500 mt-2">← SCROLL / DRAG TO EXPLORE →</p>
+      </div>
+    </section>
+
+    <section id="certifications" class="py-24">
+      <div class="max-w-6xl mx-auto px-5 reveal">
+        <p class="mono text-sky-400 text-sm">// CERTIFICATIONS & RECOGNITION</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold mt-3">Verified learning & achievements.</h2>
+        <p class="mt-4 max-w-2xl text-slate-400">A selection of professional certifications, internship recognition and national-level hackathon achievements.</p>
+
+        <div class="grid md:grid-cols-3 gap-5 mt-10">
+          <article class="project glass rounded-2xl p-6 border border-slate-700/60">
+            <div class="flex items-start justify-between gap-4">
+              <span class="text-3xl">🔐</span>
+              <span class="mono text-[10px] px-2 py-1 rounded border border-sky-400/30 text-sky-400">ZSCALER</span>
+            </div>
+            <h3 class="text-xl font-bold mt-6">Zscaler Zero Trust Associate</h3>
+            <p class="text-sky-400 text-sm mt-2">ZTCA Certification · Zscaler Academy</p>
+            <p class="text-sm leading-6 text-slate-400 mt-4">Professional certification covering Zero Trust concepts and the Zscaler security ecosystem.</p>
+            <div class="mt-5 pt-4 border-t border-slate-700/60 text-xs text-slate-500">
+              <p>6 CPE Credits</p>
+              <p class="mt-1">Valid: Dec 3, 2024 – Dec 3, 2027</p>
+            </div>
+            <div class="flex flex-wrap gap-4 mt-5">
+              <a href="certificates/ZTCA_Certificate.pdf" download class="text-sm font-bold text-sky-400 hover:text-sky-300">Download Certificate ↓</a>
+              <a href="https://verify.skilljar.com/c/eprfmptwvxyq" target="_blank" rel="noreferrer" class="text-sm font-bold text-slate-400 hover:text-sky-300">Verify ↗</a>
+            </div>
+          </article>
+
+          <article class="project glass rounded-2xl p-6 border border-slate-700/60">
+            <div class="flex items-start justify-between gap-4">
+              <span class="text-3xl">⚙️</span>
+              <span class="mono text-[10px] px-2 py-1 rounded border border-sky-400/30 text-sky-400">L&T</span>
+            </div>
+            <h3 class="text-xl font-bold mt-6">DevOps & Cloud Internship</h3>
+            <p class="text-sky-400 text-sm mt-2">Larsen & Toubro Limited</p>
+            <p class="text-sm leading-6 text-slate-400 mt-4">Completed a six-month industry internship involving practical DevOps, CI/CD and cloud-oriented engineering work.</p>
+            <div class="mt-5 pt-4 border-t border-slate-700/60 text-xs text-slate-500">
+              <p>Duration</p>
+              <p class="mt-1 text-slate-300">Aug 5, 2025 – Feb 5, 2026</p>
+            </div>
+            <a href="certificates/L&T_DevOps_Internship_Certificate.pdf" download class="inline-block mt-5 text-sm font-bold text-sky-400 hover:text-sky-300">Download Certificate ↓</a>
+          </article>
+
+          <article class="project glass rounded-2xl p-6 border border-slate-700/60">
+            <div class="flex items-start justify-between gap-4">
+              <span class="text-3xl">🏆</span>
+              <span class="mono text-[10px] px-2 py-1 rounded border border-amber-300/30 text-amber-300">QUASAR 4.0</span>
+            </div>
+            <h3 class="text-xl font-bold mt-6">Certificate of Merit</h3>
+            <p class="text-sky-400 text-sm mt-2">Quasar 4.0 National Level Hackathon</p>
+            <p class="text-sm leading-6 text-slate-400 mt-4">Recognized for outstanding performance in a 24-hour national-level hackathon, demonstrating problem-solving, innovation and teamwork.</p>
+            <div class="mt-5 pt-4 border-t border-slate-700/60 text-xs text-slate-500">
+              <p class="text-amber-200 font-bold">Secured a place among the Top 60 Teams nationwide</p>
+              <p class="mt-1">Jan 24–25, 2026 · Mumbai</p>
+            </div>
+            <a href="certificates/Quasar_4.0_Certificate.pdf" download class="inline-block mt-5 text-sm font-bold text-sky-400 hover:text-sky-300">Download Certificate ↓</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="py-24">
+      <div class="max-w-6xl mx-auto px-5 reveal">
+        <p class="mono text-sky-400 text-sm">// ACHIEVEMENTS & LEADERSHIP</p>
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+          <div class="glass rounded-3xl p-7"><h3 class="text-xl font-bold">🏆 Hackathons</h3><div class="mt-6 space-y-5 text-slate-400"><div><b class="text-slate-100">Winner & Team Lead — HackFlash'25</b><p class="text-sm mt-1">Led the team to victory in APSIT's flagship hackathon.</p></div><div><b class="text-slate-100">Finalist — Quasar 4.0</b><p class="text-sm mt-1">National-level hackathon finalist.</p></div><div><b class="text-slate-100">Hackwave 24 Participant</b><p class="text-sm mt-1">Collaborated on rapid prototyping solutions at an all-India level event.</p></div></div></div>
+          <div class="glass rounded-3xl p-7"><h3 class="text-xl font-bold">👥 Leadership</h3><div class="mt-6 space-y-5 text-slate-400"><div><b class="text-slate-100">AIMLSA Content Co-Head</b><p class="text-sm mt-1">Led content strategy and coordinated media planning for departmental events.</p></div><div><b class="text-slate-100">OJUS 2024 Publicity Co-Head</b><p class="text-sm mt-1">Executed multi-channel publicity campaigns for the annual college festival.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-24">
+      <div class="max-w-6xl mx-auto px-5 reveal">
+        <div class="rounded-3xl p-8 md:p-14 bg-gradient-to-br from-sky-400 to-cyan-200 text-slate-950">
+          <p class="mono text-sm">// GET IN TOUCH</p>
+          <h2 class="text-4xl md:text-6xl font-extrabold mt-3 max-w-3xl">Let's build something impactful.</h2>
+          <p class="mt-5 max-w-xl text-slate-800">Interested in opportunities, collaboration or discussing technology? Reach out.</p>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a href="mailto:riteshkumarsingh36@apsit.edu.in" class="px-5 py-3 bg-slate-950 text-white rounded-xl font-bold">Email Me</a>
+            <a href="https://www.linkedin.com/in/ritesh8746" target="_blank" rel="noreferrer" class="px-5 py-3 border border-slate-700 rounded-xl font-bold">LinkedIn ↗</a>
+            <a href="https://github.com/ritesh8746" target="_blank" rel="noreferrer" class="px-5 py-3 border border-slate-700 rounded-xl font-bold">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 py-7">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+    <span>© 2026 Ritesh Singh · Designed & Built with code.</span>
+    <div class="flex items-center gap-5">
+      <a class="hover:text-sky-400 transition" href="https://www.linkedin.com/in/ritesh8746" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      <a class="hover:text-sky-400 transition" href="https://github.com/ritesh8746" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a class="hover:text-sky-400 transition" href="https://ieeexplore.ieee.org/author/37089236434" target="_blank" rel="noreferrer">IEEE ↗</a>
+      <a class="hover:text-sky-400 transition" href="mailto:riteshkumarsingh36@apsit.edu.in">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const projects=[
+ {title:"Prakriti: Human Body-Type Identification",date:"2026",cat:"Research / IoT / ML",stack:["IoT","ESP32","Machine Learning","Ensemble Learning","SVM","Flask","React","Firebase"],desc:"IEEE research project integrating real-time physiological sensing with Machine Learning to identify Ayurvedic Prakriti and generate personalized lifestyle recommendations. The system uses ECG, pulse, temperature and SpO2 data, with an ESP32-based IoT pipeline, cloud storage, a React dashboard and automated wellness reporting.",icon:"🧬",featured:true,research:true},
+ {title:"Hospital Management System",date:"Dec 2025 – Feb 2026",cat:"Full Stack / Healthcare",stack:["Node.js","Express","MySQL","REST APIs"],desc:"Engineered a full-stack healthcare platform to digitize clinical and administrative workflows. The system centralizes patient records with role-based access and integrates OPD/IPD, EMR, laboratory, pharmacy and billing modules through REST APIs and real-time updates.",icon:"🏥",featured:true,caseStudy:true},
+ {title:"Smart Crop Recommendation System",date:"Jan 2025 – Mar 2025",cat:"AI / IoT",stack:["IoT","Python","ML"],desc:"IoT-based agricultural recommendation system collecting real-time soil and weather data and using machine learning to recommend optimal crops.",icon:"🌱"},
+ {title:"Finance Fraud Detection System",date:"Dec 2024 – Feb 2025",cat:"Machine Learning",stack:["Python","Scikit-learn","Flask"],desc:"Machine learning solution for fraudulent transaction classification with preprocessing, feature engineering and a Flask REST API for real-time monitoring.",icon:"🛡️"},
+ {title:"Automatic Face Attendance System",date:"Oct 2024 – Dec 2024",cat:"Computer Vision",stack:["ML","OpenCV","MySQL"],desc:"Automated attendance system using facial recognition, encoding and matching pipelines with stored attendance logs for reporting.",icon:"📷"},
+ {title:"QA-BOT: Call Center Voice Analysis",date:"2024",cat:"AI / NLP",stack:["Python","Whisper","TextBlob","NLP"],desc:"Developed a QA-focused system for analyzing call-center conversations. The workflow processes audio, performs speech-to-text, evaluates sentiment, responsiveness and accuracy, and generates insights and alerts for agent performance.",icon:"🎙️"}
+];
+const skills=[
+ ["Languages",["Python","C","SQL","HTML/CSS"]],
+ ["Security",["ZIA","ZPA","ZDX","Zscaler","SentinelOne","Zero Trust"]],
+ ["DevOps & Cloud",["Git","Jenkins","Docker","GCP","CI/CD"]],
+ ["AI & Data",["scikit-learn","pandas","NumPy","NLTK","OpenCV","Matplotlib"]]
+];
+let active="All";
+function renderProjects(){
+ const cats=["All",...new Set(projects.map(p=>p.cat))];
+ document.getElementById("filters").innerHTML=cats.map(c=>`<button onclick="active='${c}';renderProjects()" class="text-xs px-3 py-2 rounded-lg border ${active===c?'bg-sky-400 border-sky-400 text-slate-950 font-bold':'border-slate-700 text-slate-400'}">${c}</button>`).join("");
+ document.getElementById("projectGrid").innerHTML=projects.filter(p=>active==="All"||p.cat===active).map(p=>`
+ <article class="project glass rounded-2xl p-6 border border-slate-700/60">
+  <div class="flex justify-between items-start gap-3"><span class="text-3xl">${p.icon}</span><div class="flex gap-2 flex-wrap justify-end">${p.featured?'<span class="mono text-[10px] text-amber-300 border border-amber-300/30 px-2 py-1 rounded">MAJOR PROJECT</span>':''}<span class="mono text-[10px] text-sky-400 border border-sky-400/20 px-2 py-1 rounded">${p.cat}</span></div></div>
+  <h3 class="text-xl font-bold mt-6">${p.title}</h3><p class="mono text-xs text-slate-500 mt-2">${p.date}</p>
+  <p class="text-sm leading-6 text-slate-400 mt-4">${p.desc}</p>
+  ${p.title==="Hospital Management System"?'<p class="mt-4 text-xs font-bold text-amber-300">🏆 Developed during a hackathon · Top 3 Team</p>':''}
+  <div class="flex flex-wrap gap-2 mt-5">${p.stack.map(s=>`<span class="text-xs px-2 py-1 bg-slate-800 rounded-md text-slate-300">${s}</span>`).join("")}</div>
+  ${p.research?'<div class="mt-5 pt-4 border-t border-slate-700/60"><a href="#major-projects" class="text-sm font-bold text-sky-400 hover:text-sky-300">View Research Paper ↓</a></div>':''}
+  ${p.caseStudy?'<div class="mt-5 pt-4 border-t border-slate-700/60"><a href="#major-projects" class="text-sm font-bold text-sky-400 hover:text-sky-300">View Major Project ↓</a></div>':''}
+ </article>`).join("");
+}
+function renderSkills(){
+ document.getElementById("skillGrid").innerHTML=skills.map(([group,items])=>`<div class="skill glass rounded-2xl p-5 border border-slate-700/60"><p class="font-bold text-sm text-sky-400">${group}</p><div class="mt-4 flex flex-wrap gap-2">${items.map(x=>`<span class="text-xs text-slate-400">${x}</span>`).join(" <span class='text-slate-700'>•</span> ")}</div></div>`).join("");
+}
+renderProjects();renderSkills();
+const roles=["CSE–AIML Engineer","Cybersecurity Enthusiast","DevOps & Cloud Engineer","Machine Learning Developer"];
+let ri=0,ci=0,deleting=false;
+function type(){let word=roles[ri];document.getElementById("typed").textContent=word.slice(0,ci);if(!deleting&&ci<word.length){ci++;setTimeout(type,70)}else if(!deleting){deleting=true;setTimeout(type,1500)}else if(ci>0){ci--;setTimeout(type,35)}else{deleting=false;ri=(ri+1)%roles.length;setTimeout(type,300)}} type();
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));
+</script>
+</body>
+</html>
